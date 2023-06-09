@@ -17,13 +17,8 @@ public class ProductController {
 
     private final ProductService service;
 
-    @GetMapping("/test")
-    public String test(){
-        return "test";
-    }
-
     @GetMapping("/{id}")
-    public ProductDto getProductById(Long id){
+    public ProductDto getProductById(@PathVariable Long id){
         var product = service.getById(id);
         return product;
     }
